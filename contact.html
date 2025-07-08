@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Contact - My Personal Website</title>
+	<link rel="stylesheet" href="CSS/style.css"/>
+	<script>
+		const scriptURL = "https://script.google.com/macros/s/AKfycbzL0lnkz6HVdrQRQ2ezZ6R4OklNNVo3ua_Z9HZ5E-G4H6j12d8ObAFYsdZOkoP8M9Zl/exec";
+
+		window.addEventListener("DOMContentLoaded", function () {
+			const form = document.getElementById("contactForm");
+
+			form.addEventListener("submit", function (event) {
+				event.preventDefault(); // Prevent default form submission
+
+				// Get form input values
+				const name = document.getElementById("name").value.trim();
+				const age = document.getElementById("age").value.trim();
+				const email = document.getElementById("email").value.trim();
+
+				// Simple validation
+				if (!name || !age || !email) {
+					alert("Please fill out all fields.");
+					return;
+				}
+
+				// Prepare form data
+				const formData = new FormData(form);
+
+				// Submit to Google Sheets via Apps Script
+				fetch(scriptURL, {
+					method: "POST",
+					body: formData
+				})
+				.then(response => response.text())
+				.then(responseText => {
+					alert(`Thank you, ${name}! Your data was submitted.`);
+
+					const another = confirm("Would you like to submit another response?");
+					if (another) {
+						form.reset(); // Clear the form
+					} else {
+						alert("Thank you for participating!");
+						window.location.href = "index.html";
+					}
+				})
+				.catch(error => {
+					alert("Error submitting the form.");
+					console.error("Submission Error:", error);
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="header">
+		<h1 class="header-text">CONTACT</h1>
+	</header>
+
+	<!-- Navigation Bar -->
+	<nav class="navbar">
+		<a href="index.html">Home</a>
+		<a href="about.html">About</a>
+		<a href="contact.html" class="active">Contact</a>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="main-content">
+		<a href="index.html" class="back-button">← Back to Home</a>
+		
+		<section id="contact" class="content-section">
+			<h2>Want to work on a project together?</h2> 
+			<p>Answer the form to contact me</p>
+		</section>
+
+		<form id="contactForm" class="contact-form">
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name" required>
+
+			<label for="age">Age:</label>
+			<input type="number" id="age" name="age" required>
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" required>
+
+			<input type="submit" value="Submit">
+		</form>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<p>&copy; 2025 Sarmiento. All rights reserved.</p>
+	</footer>
+</body>
+</html>

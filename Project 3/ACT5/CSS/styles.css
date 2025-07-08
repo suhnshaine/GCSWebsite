@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+}
+
+.header {
+    background-color: #333;
+    padding: 20px 0;
+    color: white;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.header-text h1 {
+    color: #009EDB;
+    font-size: 50px;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #009EDB;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    background-color: #007bb4;
+}
+
+.container_12 {
+    background-color: #fff;
+    padding: 20px 0;
+    border-top: 3px solid #ccc;
+    padding-top: 20px;
+}
+
+.grid_4 {
+    background-color: #eaeaea;
+    padding: 15px;
+}
+
+.grid_8 {
+    background-color: #eaeaea;
+    padding: 15px;
+}
+
+.sdg-logo {
+    width: 120px;
+    height: 120px;
+    margin: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: black;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.grid_4 h3 {
+    margin-top: 1em;
+    margin-bottom: 0.6em;
+}
+
+.grid_4 p {
+    margin-bottom: 1em;
+}

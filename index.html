@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Home - My Personal Website</title>
+	<link rel="stylesheet" href="CSS/style.css"/>
+
+</head>
+
+<body>
+	<!-- Header -->
+	<header class="header">
+		<h1 class="header-text" id="animated-text">WELCOME TO MY WEBSITE</h1>
+	</header>
+
+	<script>
+		var header = document.getElementById("animated-text");
+		var text = header.textContent;
+		header.textContent = ""; // clear original
+
+		// Step 1: Wrap each character in a <span>
+		for (var i = 0; i < text.length; i++) {
+			var span = document.createElement("span");
+			span.textContent = text[i];
+			header.appendChild(span);
+		}
+
+		var spans = header.getElementsByTagName("span");
+		var currentIndex = 0;
+
+		// Step 2: Function to highlight one letter at a time
+		function animateLetter() {
+			// Reset all colors first
+			for (var i = 0; i < spans.length; i++) {
+				spans[i].style.color = "";
+			}
+
+			// Highlight the current letter
+			if (currentIndex < spans.length) {
+				spans[currentIndex].style.color = "#F6DC43";
+			}
+
+			currentIndex++;
+
+			// Reset to 0 after the last letter to loop again
+			if (currentIndex > spans.length) {
+				currentIndex = 0;
+			}
+		}
+
+		// Step 3: Run the animation every 300ms
+		setInterval(animateLetter, 300);
+	</script>
+
+	<!-- Navigation Bar -->
+	<nav class="navbar">
+		<a href="index.html" class="active">Home</a>
+		<a href="about.html">About</a>
+		<a href="contact.html">Contact</a>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="main-content">
+		<section id="home" class="content-section">
+			<h2>Introduction</h2>
+			<div class="paragraph-box">
+				<p>
+				My name is <strong>Gian Carlo Sarmiento</strong>, and I am a first-year <strong>Information Technology student at Far Eastern University Institute of Technology</strong>, specializing in Web and Mobile Application Development.
+				This personal website is created as part of my coursework for the subject <strong>IT0043: Web Design and Client-Side Scripting</strong>. It serves as my virtual portfolio, showcasing the projects I am currently 
+				working on and demonstrating the skills I’ve developed in web technologies. Through this platform, I aim to reflect my progress, creativity, and commitment to becoming a proficient developer in 
+				the field of web and mobile applications.
+				</p>
+			</div><br>
+
+			<h2>Mission Statement</h2>
+			<div class="paragraph-box">
+				<p>
+				I aim to use this platform as a digital portfolio to highlight my <strong>skills, creativity, and growth</strong> in the field of web development, particularly in using HTML. Through this website, I will 
+				showcase the projects I’ve created, demonstrate my understanding of coding principles, and reflect my dedication to learning and improving as a future developer.
+				</p>
+			</div><br>
+
+			<!-- Projects -->
+			<div class="projects">
+				<div class="project-item">
+					<h3 class="project">The Periodic Table of Elements</h3>
+					<a href="Project 1/Project 1.html">
+						<img src="IMAGE/Screenshot 2025-06-22 202705.png" class="project-thumbnail">
+					</a>
+				</div>
+
+				<div class="project-item">
+					<h3 class="project">The Periodic Table of Elements</h3>
+					<a href="Project 2/Project 2.html">
+						<img src="IMAGE/Screenshot 2025-06-22 190257.png" class="project-thumbnail">
+					</a>
+				</div>
+
+				<div class="project-item">
+					<h3 class="project">Sustainable Development Goals</h3>
+					<a href="Project 3/ACT5/TA5.html">
+						<img src="IMAGE/Screenshot 2025-06-22 190603.png" class="project-thumbnail">
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<p>&copy; 2025 Sarmiento. All rights reserved.</p>
+	</footer>
+</body>
+</html>
+

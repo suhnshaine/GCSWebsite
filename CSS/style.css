@@ -1,0 +1,253 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	font-family: Arial, sans-serif;
+	background: #f5f5f5;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+
+/* Header */
+.header {
+	height: 65px;
+	background-color: #410445;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.header-text {
+	color: white;
+	font-size: 32px;
+	font-weight: 600;
+}
+
+.header-text span {
+	transition: color 0.3s ease;
+}
+
+/* Navigation */
+.navbar {
+	height: 30px;
+	background-color: #F6DC43;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar a {
+	color: white;
+	text-decoration: none;
+	padding: 0 20px;
+	font-size: 15px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	transition: all 0.3s ease;
+}
+
+.navbar a.active {
+	background-color: #410445;
+	color: white;
+}
+
+.navbar a:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Back Home Button */
+.back-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #f5f5f5;
+	color: #410445;
+	text-decoration: none;
+	border-radius: 8px;
+	font-weight: bold;
+	margin: 20px;
+	border: 2px solid #410445;
+	transition: background-color 0.3s ease;
+	cursor: pointer;
+}
+
+.back-button:hover {
+	background-color: #e0e0e0;
+}
+
+/* Home Section */
+.main-content {
+	flex: 1;
+	padding: 20px;
+	background-color: #fff;
+	overflow-y: auto;
+}
+
+/* Shared Section Styles */
+.content-section {
+	text-align: center;
+	line-height: 1.6;
+}
+
+.paragraph-box {
+	background-color: #fdfdfd;
+	border: 1px solid #ccc;
+	padding: 25px 50px;
+	border-radius: 10px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/*Projects (Home Page) */
+.projects {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 30px;
+	margin-top: 30px;
+}
+.project-item {
+	width: 300px;
+	text-align: center;
+}
+
+.project-thumbnail {
+	width: 100%;
+	height: 180px;
+	object-fit: contain;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	transition: transform 0.3s ease, border-color 0.3 ease;
+}
+
+.project-thumbnail:hover {
+	transform: scale(1.05);
+	border-color: #410445;
+}
+
+/* About Section */
+.about-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+/* Sidebar Styles */
+.about-sidebar {
+	flex: 1;
+	max-width: 250px;
+	text-align: center;
+}
+
+.about-image {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.student-info {
+	font-size: 14px;
+}
+
+.school-name {
+	font-size: 16px;
+}
+
+/* Courses Section */
+.about-courses {
+	flex: 2;
+	min-width: 300px;
+}
+
+.course-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.course-table th,
+.course-table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	text-align: left;
+}
+
+.course-table thead {
+	background-color: #f2f2f2;
+}
+
+/* Contact Section */
+.contact-form {
+	max-width: 500px;
+	margin: 20px auto 0 auto;
+}
+
+.contact-form label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="number"],
+.contact-form input[type="email"],
+.contact-form select {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.contact-form input[type="submit"] {
+	padding: 10px 20px;
+	background-color: #410445;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+	background-color: #6a1e6f;
+}
+
+.excel-button {
+	padding: 10px 20px;
+	background-color: #410445;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 20px;
+}
+
+.excel-button:hover {
+	background-color: #6a1e6f;
+}
+
+
+/* Footer */
+.footer {
+	height: 35px;
+	background-color: #410445;
+	color: white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
