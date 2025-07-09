@@ -32,12 +32,16 @@
 				.then(responseText => {
 					alert(`Thank you, ${name}! Your data was submitted.`);
 
-					const another = confirm("Would you like to submit another response?");
-					if (another) {
-						form.reset();
-					} else {
-						alert("Thank you for participating!");
-						window.location.href = "index.html";
+					let submitAgain = true;
+					for (; submitAgain;) {
+						submitAgain = confirm("Would you like to submit another response?");
+						if (submitAgain) {
+							form.reset();
+							return;
+						} else {
+							alert("Thank you for participating!");
+							window.location.href = "index.html";
+						}
 					}
 				})
 				.catch(error => {
