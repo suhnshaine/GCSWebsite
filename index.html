@@ -13,12 +13,12 @@
 		<h1 class="header-text" id="animated-text">WELCOME TO MY WEBSITE</h1>
 	</header>
 
+	<!-- Animation -->
 	<script>
 		var header = document.getElementById("animated-text");
 		var text = header.textContent;
-		header.textContent = ""; // clear original
+		header.textContent = "";
 
-		// Step 1: Wrap each character in a <span>
 		for (var i = 0; i < text.length; i++) {
 			var span = document.createElement("span");
 			span.textContent = text[i];
@@ -28,7 +28,6 @@
 		var spans = header.getElementsByTagName("span");
 		var currentIndex = 0;
 
-		// Step 2: Function to highlight one letter at a time
 		function animateLetter() {
 			// Reset all colors first
 			for (var i = 0; i < spans.length; i++) {
@@ -47,8 +46,6 @@
 				currentIndex = 0;
 			}
 		}
-
-		// Step 3: Run the animation every 300ms
 		setInterval(animateLetter, 300);
 	</script>
 
