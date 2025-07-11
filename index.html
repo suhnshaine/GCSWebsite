@@ -15,38 +15,44 @@
 
 	<!-- Animation -->
 	<script>
-		var header = document.getElementById("animated-text");
-		var text = header.textContent;
-		header.textContent = "";
+	var header = document.getElementById("animated-text");
+	var text = header.textContent;
+	header.textContent = "";
 
-		for (var i = 0; i < text.length; i++) {
-			var span = document.createElement("span");
-			span.textContent = text[i];
-			header.appendChild(span);
+	for (var i = 0; i < text.length; i++) {
+		var span = document.createElement("span");
+		span.textContent = text[i];
+		header.appendChild(span);
+	}
+
+	var spans = header.getElementsByTagName("span");
+	var currentIndex = 0;
+
+	function animateLetter() {
+		for (var i = 0; i < spans.length; i++) {
+			spans[i].style.color = ""; // reset color
 		}
-
-		var spans = header.getElementsByTagName("span");
-		var currentIndex = 0;
-
-		function animateLetter() {
-			// Reset all colors first
-			for (var i = 0; i < spans.length; i++) {
-				spans[i].style.color = "";
-			}
-
-			// Highlight the current letter
-			if (currentIndex < spans.length) {
-				spans[currentIndex].style.color = "#F6DC43";
-			}
-
-			currentIndex++;
-
-			// Reset to 0 after the last letter to loop again
-			if (currentIndex > spans.length) {
-				currentIndex = 0;
-			}
+		
+		if (currentIndex < spans.length) {
+			spans[currentIndex].style.color = "#F6DC43";
 		}
-		setInterval(animateLetter, 300);
+		
+		currentIndex++;
+
+		if (currentIndex === spans.length) {
+			setTimeout(() => {
+				for (var i = 0; i < spans.length; i++) {
+					spans[i].style.color = "#F6DC43";
+				}
+			}, 300);
+		}
+		
+		if (currentIndex > spans.length) {
+			currentIndex = 0;
+		}
+	}
+
+	setInterval(animateLetter, 300);
 	</script>
 
 	<!-- Navigation Bar -->
