@@ -14,6 +14,23 @@ html, body {
 	overflow-x: hidden;
 }
 
+.toggle-button {
+	position: fixed;
+	padding: 10px 20px;
+	background-color: #410445;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	margin: 20px;
+}
+
+.toggle-button:hover {
+	background-color: #6a1e6f;
+}
+
 /* Header */
 .header {
 	height: 65px;
@@ -221,24 +238,6 @@ html, body {
 	background-color: #6a1e6f;
 }
 
-.excel-button {
-	padding: 10px 20px;
-	background-color: #410445;
-	color: white;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-	text-decoration: none;
-	display: inline-block;
-	margin-top: 20px;
-}
-
-.excel-button:hover {
-	background-color: #6a1e6f;
-}
-
-
 /* Footer */
 .footer {
 	height: 35px;
@@ -250,4 +249,3 @@ html, body {
 	justify-content: center;
 	flex-shrink: 0;
 }
-
