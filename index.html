@@ -4,7 +4,6 @@
 	<meta charset="UTF-8"/>
 	<title>Home - My Personal Website</title>
 	<link rel="stylesheet" href="CSS/style.css"/>
-
 </head>
 
 <body>
@@ -13,12 +12,12 @@
 		<h1 class="header-text" id="animated-text">WELCOME TO MY WEBSITE</h1>
 	</header>
 
-	<!-- Animation -->
 	<script>
 	var header = document.getElementById("animated-text");
 	var text = header.textContent;
 	header.textContent = "";
 
+	// Wrap each letter in a <span>
 	for (var i = 0; i < text.length; i++) {
 		var span = document.createElement("span");
 		span.textContent = text[i];
@@ -30,9 +29,9 @@
 
 	function animateLetter() {
 		for (var i = 0; i < spans.length; i++) {
-			spans[i].style.color = "";
+			spans[i].style.color = ""; // reset color
 		}
-		
+
 		if (currentIndex < spans.length) {
 			spans[currentIndex].style.color = "#F6DC43";
 		}
@@ -46,7 +45,7 @@
 				}
 			}, 300);
 		}
-		
+
 		if (currentIndex > spans.length) {
 			currentIndex = 0;
 		}
@@ -61,6 +60,11 @@
 		<a href="about.html">About</a>
 		<a href="contact.html">Contact</a>
 	</nav>
+
+	<!-- Toggle Button -->
+	<div>
+		<button onclick="toggleDarkMode()" class="toggle-button">Change Color</button>
+	</div>
 
 	<!-- Main Content -->
 	<main class="main-content">
@@ -113,6 +117,21 @@
 	<footer class="footer">
 		<p>&copy; 2025 Sarmiento. All rights reserved.</p>
 	</footer>
+
+	<!-- Toggle Dark Mode Script -->
+	<script>
+	function toggleDarkMode() {
+		const boxes = document.querySelectorAll('.paragraph-box');
+		boxes.forEach(box => {
+			if (box.style.backgroundColor === "black") {
+				box.style.backgroundColor = "#fdfdfd";
+				box.style.color = "#333";
+			} else {
+				box.style.backgroundColor = "black";
+				box.style.color = "white";
+			}
+		});
+	}
+	</script>
 </body>
 </html>
-
